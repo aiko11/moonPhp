@@ -16,6 +16,7 @@ class Application
         $cancontroll = false;
         $url="";
 
+        // 아파치 .htaccess 설정에 따라 도메인 이름 뒤에 나오는 모든 것은 url 변수로 들어 오게 된다.
         print_r( $_GET);
         if(isset($_GET["url"])){
             $url = rtrim($_GET["url"], "/");
@@ -24,23 +25,25 @@ class Application
 
         $params = explode("/", $url);
         $counts = count($params);
-        $this->controller = "home";
+        $this->controller = "home"; // url이 없다면 기본 경로로 접속
 
         if(isset($params[0])){
             if($params[0]) $this->controller= $params[0];
         }
 
+        // controller폴더안에 파일이 있는지 확인하고 있으면 있으면 include 하고 클래스를 실행 시킨다.
         $file_path = "./controller/". $this->controller.'.php';
 
         if( file_exists($file_path) ){
             require "./controller/". $this->controller . ".php";
             $this->controller = new $this->controller();
-            $this->action = "index";
+            $this->action = "index"; // 클래스 실행 후 기본 실행될 메소드 이름
 
             if(isset($params[1])){
-                if($params[1]) $this->action=$params[1];
+                if($params[1]) $this->action=$params[1]; // 클래스 실행 후 실행될 메소드 적용
             }
 
+            // 메소드 실행 및 인자 갯수에 따른 인자 값 적용
             if(method_exists($this->controller, $this->action)){
                 $cancontroll = true;
                 switch($counts){
