@@ -1,4 +1,7 @@
 <?php
+require_once("config/config.php");
+require_once("libs/application.php");
+require_once("libs/controller.php");
 /**
  * Created by PhpStorm.
  * User: dev_5278
@@ -9,6 +12,4 @@
 //require "libs/application.php";
 //require "config/controller.php";
 //
-//$app = new Application();
-
-print_r($_GET);
+$app = new Application();

@@ -80,5 +80,3 @@ class Application
         if( $cancontroll === false){ echo "<!DOCTYPE html><html><head><meta charset='utf-8'></head><body><h1>Oops!!! 잘못된 접근입니다.</h1></body></html>"; }
     }
 }
-
-new Application();
