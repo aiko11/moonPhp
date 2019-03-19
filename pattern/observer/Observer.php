@@ -1,9 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: dev_5278
- * Date: 2019-03-18
- * Time: 오후 1:15
+ * User: moonok29
  */
 
 interface Observer
