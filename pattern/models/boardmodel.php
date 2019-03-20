@@ -16,14 +16,14 @@ class BoardModel
     }
 
     public function getBoardList(){
-        $sql = "select dl_number, dm_id, dl_createAt from daily_log";
+        $sql = "select idx,title,writer, createAt from moon_board";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetchAll();
     }
 
     public function getBoardView($idx){
-        $sql = "select dl_number, dm_id, dl_content, dl_createAt from daily_log where dl_number=".$idx;
+        $sql = "select idx,title,content, writer, createAt from moon_board where idx=".$idx;
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetch();

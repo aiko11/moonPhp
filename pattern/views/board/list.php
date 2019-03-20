@@ -4,7 +4,7 @@
 
 <ul class="board-list">
 <?php foreach($board_list as $row){ ?>
-<li><a href="/pattern/board/view/<?php echo $row->dl_number;?> ">/ <?php echo $row->dm_id;?> / <?php echo $row->dl_createAt;?></a></li>
+<li><a href="/php_local/pattern/board/view/<?php echo $row->idx;?> ">/ <?php echo $row->title;?> / <?php echo $row->createAt;?></a></li>
 <?php } ?>
 </ul>
 

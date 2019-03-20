@@ -4,9 +4,9 @@
 <div class="board-view">
 	<h2><?=$idx;?> 번 글을 보고 계십니다.</h2>
     <ul>
-        <li><?=$board_view->dm_id?></li>
-        <li><?=$board_view->dl_createAt?></li>
-        <li><pre><?=$board_view->dl_content?></pre></li>
+        <li><?=$board_view->writer?></li>
+        <li><?=$board_view->title?></li>
+        <li><?=$board_view->content?></li>
     </ul>
 </div>
 <button onclick="location.href='../'">목 록 으 로</button>
