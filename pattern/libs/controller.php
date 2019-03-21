@@ -41,4 +41,7 @@ class Controller
         require 'models/'.strtolower($model_name). ".php";
         return new $model_name($this->db);
     }
+
+    function __destruct(){
+    }
 }
